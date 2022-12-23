@@ -6,3 +6,4 @@ class CustomerModel(BaseUser):
     points = models.IntegerField(default=0)
     def __str__(self):
         return self.email
+

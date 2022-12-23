@@ -10,13 +10,13 @@ class ParkingSlotsSerialzer(serializers.ModelSerializer):
 class MultiParkingCentersModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = ParkingCenterModel
-        fields = "__all__"
+        exclude = ["created_at", "updated_at"]
 
 class ParkingCenterModelSerializer(serializers.ModelSerializer):
     slots = serializers.SerializerMethodField()
     class Meta:
         model = ParkingCenterModel
-        fields = "__all__"
+        exclude = ["created_at", "updated_at"]
     def get_slots(self, obj):
         slots = []
         try:
